@@ -1,0 +1,1 @@
+This project is only aiming to make a personal study and observation on some cases regarding JSON processing (in large amounts), comparing Rust vs Typescript (which is my daily driver). It is also my first touch with the Rust language, so every rust commit is basically me learning a new thing_
