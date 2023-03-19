@@ -3,7 +3,7 @@ This project is only aiming to make a personal study and observation on some cas
 
 ## What it will be measuring?
 Well, this is more a test than anything, but nothing actually scientific.  
-I have made a ~24MB JSON using the website [json-generator](https://json-generator.com/), containing some like-user data, and each one of these users having N `tags`, I will get each one of these tags and add the specific user to the grouped tags users... basically concatening them on each of one the tags in the array.  
+I have made a ~29MB JSON using the website [json-generator](https://json-generator.com/), containing some user-like data, and each one of these users having N `tags`, I will get each one of these tags and add the specific user to the grouped tags users... basically concatening them on each of one the tags in the array.  
 Running a timestamp before it starts running, and another after it all ran, I will get the time it took between one timestamp declaration to another and display the results.
 
 ## Results
