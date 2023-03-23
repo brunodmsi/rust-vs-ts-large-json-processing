@@ -21,14 +21,7 @@ fn main() -> std::io::Result<()> {
 
     let mut tag_users: HashMap<&String, Vec<&String>> = HashMap::new();
 
-    let mut skipped_users: Vec<&String> = Vec::new();
-
     for user in data_result.iter() {
-        if !user.isActive {
-            skipped_users.push(&user.id);
-            continue;
-        }
-        
         for tag in user.tags.iter() {
             tag_users.entry(tag).or_insert(Vec::new()).push(&user.id);
         }
@@ -36,7 +29,6 @@ fn main() -> std::io::Result<()> {
 
     //println!("{:?}", tag_users);
     println!("total users -> {}", data_result.len());
-    println!("skipped users -> {}", skipped_users.len());
     println!("total tags -> {}", tag_users.keys().len());
 
     println!("total users by tags");

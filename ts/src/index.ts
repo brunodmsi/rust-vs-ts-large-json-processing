@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 type DataResult = {
 	id: string,
 	isActive: boolean,
+	registered: string,
 	tags: string[]
 }
 
@@ -15,14 +16,8 @@ async function main() {
 	const dataResult: Array<DataResult> = JSON.parse(file.toString());
 
 	const tagUsers: Record<string, string[]> = {};
-	const skippedUsers: string[] = [];
 
 	for (let user of dataResult) {
-		if (!user.isActive){
-			skippedUsers.push(user.id);
-			continue;
-		}
-
 		for (let tag of user.tags) {
 			if (!tagUsers[tag]) {
 				tagUsers[tag] = [user.id];
@@ -33,7 +28,6 @@ async function main() {
 	}
 
 	console.log(`total users -> ${dataResult.length}`);
-	console.log(`skipped users -> ${skippedUsers.length}`);
 	console.log(`total tags -> ${Object.keys(tagUsers).length}`);
 
 	console.log('total users by tags');
